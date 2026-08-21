@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gratitude Journal - Cultivate Daily Mindfulness</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent: #38bdf8;
+            --accent-hover: #0ea5e9;
+            --tag-bg: #334155;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 50px 20px;
+            flex: 1;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .app-badge {
+            display: inline-block;
+            background: rgba(56, 189, 248, 0.15);
+            color: var(--accent);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+        }
+        header h1 {
+            font-size: 2.6rem;
+            margin-bottom: 14px;
+            background: linear-gradient(90deg, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        header p {
+            color: var(--text-muted);
+            font-size: 1.15rem;
+            max-width: 650px;
+            margin: 0 auto 24px auto;
+        }
+        .cta-btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: var(--accent);
+            color: #0f172a;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+        }
+        .cta-btn:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-1px);
+        }
+        .section-title {
+            font-size: 1.3rem;
+            margin: 40px 0 20px 0;
+            color: #ffffff;
+            border-bottom: 1px solid #334155;
+            padding-bottom: 8px;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+            margin-bottom: 40px;
+        }
+        .feature-card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 20px;
+            border: 1px solid #334155;
+        }
+        .feature-card h3 {
+            font-size: 1.05rem;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+        .feature-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        .support-card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 24px;
+            border: 1px solid #334155;
+            text-align: center;
+        }
+        .support-card a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        footer {
+            border-top: 1px solid #1e293b;
+            padding: 24px 20px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+        footer a {
+            color: var(--text-muted);
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        footer a:hover {
+            color: var(--accent);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <div class="app-badge">Digital Reflection & Mindfulness</div>
+        <h1>Daily Gratitude Journal</h1>
+        <p>A serene, distraction-free space to capture daily reflections, track mood trends, and build a lasting habit of gratitude.</p>
+        <a href="https://play.google.com/store" target="_blank" class="cta-btn">Download on Google Play</a>
+    </header>
+
+    <h2 class="section-title">Key Features</h2>
+    <div class="features-grid">
+        <div class="feature-card">
+            <h3>🎙️ Voice Notes & Speech-to-Text</h3>
+            <p>Speak your mind freely. Capture spontaneous thoughts on the go with real-time transcription or audio notes.</p>
+        </div>
+        <div class="feature-card">
+            <h3>📸 Photo Memories</h3>
+            <p>Attach meaningful photos to your daily entries to bring your cherished moments and visual memories to life.</p>
+        </div>
+        <div class="feature-card">
+            <h3>📊 Mood Trend Summaries</h3>
+            <p>Visualize your emotional patterns and reflect on personal growth over weeks and months with intuitive summaries.</p>
+        </div>
+        <div class="feature-card">
+            <h3>🔥 Streak Badges & Milestones</h3>
+            <p>Stay motivated with streak counters and celebratory milestone badges designed to reward positive consistency.</p>
+        </div>
+        <div class="feature-card">
+            <h3>✨ Daily Inspirational Quotes</h3>
+            <p>Start each reflection session with carefully curated wisdom and perspective to spark meaningful gratitude.</p>
+        </div>
+        <div class="feature-card">
+            <h3>🔒 Private & Secure</h3>
+            <p>Your reflections remain your own, providing a peaceful and safe environment for personal self-discovery.</p>
+        </div>
+    </div>
+
+    <h2 class="section-title">Support & Inquiries</h2>
+    <div class="support-card">
+        <p>Need help with your app, found a bug, or have a suggestion?</p>
+        <p style="margin-top: 8px;">Contact us at: <a href="mailto:support@themomomethod.com">support@themomomethod.com</a></p>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2026 The MoMo Method. All rights reserved.</p>
+    <p style="margin-top: 10px;">
+        <a href="https://sites.google.com/view/gratitude-privacy-policy/home" target="_blank">Privacy Policy</a>
+        <span>•</span>
+        <a href="/app-ads.txt">app-ads.txt</a>
+    </p>
+</footer>
+
+</body>
+</html>
