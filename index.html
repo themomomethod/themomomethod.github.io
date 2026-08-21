@@ -6,163 +6,236 @@
     <title>Gratitude - Cultivate a Great Attitude Daily</title>
     <style>
         :root {
-            /* Palette extracted directly from logo.png */
-            --bg-color: #6C9082; /* Sage Green */
-            --logo-accent: #E9DCD3; /* Soft Blush/Cream */
-            --text-main: #FFFFFF;
-            --text-muted: #E0EAE6;
-            --card-bg: rgba(255, 255, 255, 0.08); /* Translucent overlay */
-            --border-color: rgba(255, 255, 255, 0.15);
-            
-            /* Action colors (contrasting) */
-            --accent-action: #F6E6DC; /* Lighter blush */
-            --accent-action-hover: #FFFFFF;
-            --text-on-accent: #557568; /* Darker sage for readability */
+            --bg-page: #F8FAF9;
+            --bg-surface: #FFFFFF;
+            --primary: #4E7364;        /* Deep Sage */
+            --primary-dark: #3B5A4E;
+            --accent-soft: #EAE3DC;     /* Warm Cream */
+            --accent-subtle: #F0F4F2;
+            --text-primary: #1C2826;
+            --text-secondary: #5A6E65;
+            --text-muted: #8A9E96;
+            --border-light: #E2EAE6;
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+            --shadow-md: 0 10px 25px rgba(78, 115, 100, 0.08);
+            --shadow-lg: 0 16px 36px rgba(78, 115, 100, 0.12);
         }
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
         }
+
         body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            line-height: 1.7;
+            background-color: var(--bg-page);
+            color: var(--text-primary);
+            line-height: 1.6;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
         }
+
         .container {
-            max-width: 800px;
+            max-width: 860px;
             margin: 0 auto;
-            padding: 60px 24px;
+            padding: 60px 24px 40px;
             flex: 1;
         }
+
+        /* Hero Section */
         header {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 48px;
         }
-        .logo-img {
-            max-width: 120px;
-            height: auto;
-            margin-bottom: 20px;
-            /* Optional: subtle glow effect matching the logo accent */
-            filter: drop-shadow(0 0 8px rgba(233, 220, 211, 0.3));
-        }
-        header h1 {
-            font-size: 3.2rem;
-            font-weight: 800;
-            margin-bottom: 10px;
-            letter-spacing: -1px;
-            color: var(--logo-accent);
-        }
-        header p {
-            color: var(--text-muted);
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        .cta-btn {
+
+        .logo-wrapper {
             display: inline-block;
-            margin-top: 30px;
+            margin-bottom: 24px;
+            position: relative;
+        }
+
+        .logo-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 22px;
+            box-shadow: var(--shadow-lg);
+            display: block;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: -0.03em;
+            margin-bottom: 12px;
+        }
+
+        header p {
+            color: var(--text-secondary);
+            font-size: 1.15rem;
+            max-width: 580px;
+            margin: 0 auto 28px;
+            line-height: 1.6;
+        }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
             padding: 14px 32px;
-            background-color: var(--accent-action);
-            color: var(--text-on-accent);
-            font-weight: 700;
+            background-color: var(--primary);
+            color: #FFFFFF;
+            font-weight: 600;
+            font-size: 1rem;
             text-decoration: none;
-            border-radius: 30px;
-            transition: all 0.2s ease;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-radius: 50px;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: var(--shadow-md);
         }
+
         .cta-btn:hover {
-            background-color: var(--accent-action-hover);
+            background-color: var(--primary-dark);
             transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+            box-shadow: var(--shadow-lg);
         }
-        .wordplay-section {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
+
+        /* Tagline / Wordplay Box */
+        .wordplay-card {
+            background: linear-gradient(135deg, #FAF7F4 0%, #F0F5F2 100%);
+            border: 1px solid var(--border-light);
             border-radius: 16px;
-            padding: 30px;
+            padding: 24px 28px;
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 48px;
+            box-shadow: var(--shadow-sm);
         }
+
         .wordplay-text {
-            font-size: 1.3rem;
-            color: var(--text-main);
+            font-size: 1.25rem;
+            color: var(--text-primary);
             font-weight: 500;
+            letter-spacing: -0.01em;
         }
-        .wordplay-text span {
-            color: var(--logo-accent);
+
+        .wordplay-text strong {
+            color: var(--primary);
             font-weight: 800;
         }
+
+        /* Features */
         .section-title {
-            font-size: 1.5rem;
-            margin: 40px 0 20px 0;
-            color: var(--logo-accent);
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 20px;
             text-align: center;
         }
+
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin-bottom: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 18px;
+            margin-bottom: 48px;
         }
+
         .feature-card {
-            background: var(--card-bg);
-            border-radius: 12px;
+            background: var(--bg-surface);
+            border-radius: 14px;
             padding: 24px;
-            border: 1px solid var(--border-color);
-            transition: transform 0.2s ease;
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
+
         .feature-card:hover {
             transform: translateY(-3px);
-            background: rgba(255, 255, 255, 0.1);
+            box-shadow: var(--shadow-md);
         }
+
+        .feature-icon {
+            font-size: 1.6rem;
+            margin-bottom: 12px;
+            display: block;
+        }
+
         .feature-card h3 {
-            font-size: 1.1rem;
-            color: var(--logo-accent);
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 8px;
         }
+
         .feature-card p {
-            font-size: 0.95rem;
-            color: var(--text-muted);
+            font-size: 0.92rem;
+            color: var(--text-secondary);
+            line-height: 1.55;
         }
+
+        /* Support Section */
         .support-card {
-            background: var(--card-bg);
-            border-radius: 12px;
-            padding: 30px;
-            border: 1px solid var(--border-color);
+            background: var(--bg-surface);
+            border-radius: 16px;
+            padding: 32px 24px;
+            border: 1px solid var(--border-light);
             text-align: center;
+            box-shadow: var(--shadow-sm);
             margin-bottom: 40px;
         }
+
+        .support-card h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 6px;
+        }
+
+        .support-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
         .support-card a {
-            color: var(--logo-accent);
+            color: var(--primary);
             text-decoration: none;
             font-weight: 600;
+            border-bottom: 1px dashed var(--primary);
+            padding-bottom: 1px;
+            transition: color 0.2s;
         }
+
         .support-card a:hover {
-            text-decoration: underline;
+            color: var(--primary-dark);
+            border-bottom-style: solid;
         }
+
+        /* Footer */
         footer {
-            border-top: 1px solid var(--border-color);
-            padding: 30px 20px;
+            border-top: 1px solid var(--border-light);
+            background: var(--bg-surface);
+            padding: 28px 20px;
             text-align: center;
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             color: var(--text-muted);
-            background: rgba(0,0,0,0.05);
         }
+
+        footer p {
+            margin-bottom: 8px;
+        }
+
         footer a {
-            color: var(--text-muted);
-            margin: 0 12px;
+            color: var(--text-secondary);
+            margin: 0 10px;
             text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
         }
+
         footer a:hover {
-            color: var(--logo-accent);
+            color: var(--primary);
         }
     </style>
 </head>
@@ -170,48 +243,63 @@
 
 <div class="container">
     <header>
-        <!-- The logo file we uploaded in Part 1 -->
-        <img src="logo.png" alt="Gratitude Logo" class="logo-img">
+        <div class="logo-wrapper">
+            <img src="logo.png" alt="Gratitude App Icon" class="logo-img">
+        </div>
         <h1>Gratitude</h1>
-        <p>Your serene digital space for daily reflection, mindfulness, and tracking life’s meaningful moments.</p>
-        <!-- Remember to update this link when your app is live -->
-        <a href="https://play.google.com/store" target="_blank" class="cta-btn">Download on Google Play</a>
+        <p>A serene, distraction-free space for daily reflection, mindfulness, and tracking life’s meaningful moments.</p>
+        <a href="https://play.google.com/store" target="_blank" class="cta-btn">
+            <span>Download on Google Play</span>
+        </a>
     </header>
 
-    <div class="wordplay-section">
-        <p class="wordplay-text">A <span>Gr</span>eat <span>Atitude</span> leads to <span>Gratitude</span>.</p>
+    <div class="wordplay-card">
+        <p class="wordplay-text">A <strong>Gr</strong>eat <strong>Atitude</strong> leads to <strong>Gratitude</strong>.</p>
     </div>
 
-    <h2 class="section-title">Cultivate Your Practice</h2>
+    <h2 class="section-title">Everything You Need to Reflect</h2>
     <div class="features-grid">
         <div class="feature-card">
-            <h3>🎙️ Voice & Speech-to-Text</h3>
-            <p>Capture spontaneous thoughts freely with integrated audio notes and real-time transcription.</p>
+            <span class="feature-icon">🎙️</span>
+            <h3>Voice Notes & Transcription</h3>
+            <p>Capture spontaneous thoughts on the go with real-time speech-to-text or save intimate audio memos.</p>
         </div>
         <div class="feature-card">
-            <h3>📸 Photo Memories</h3>
-            <p>Bring your cherished moments to life by attaching meaningful photos to your daily entries.</p>
+            <span class="feature-icon">📸</span>
+            <h3>Photo Memories</h3>
+            <p>Attach personal photos to your entries to preserve visual memories of people, places, and small joys.</p>
         </div>
         <div class="feature-card">
-            <h3>📊 Mood Trend Summaries</h3>
-            <p>Visualize emotional patterns and reflect on your personal growth journey over time.</p>
+            <span class="feature-icon">📊</span>
+            <h3>Mood Trend Summaries</h3>
+            <p>Gain meaningful clarity over emotional patterns and personal milestones with intuitive overviews.</p>
         </div>
         <div class="feature-card">
-            <h3>✨ Inspirational Quotes</h3>
-            <p>Begin each session with curated wisdom designed to spark perspective and thankfulness.</p>
+            <span class="feature-icon">🔥</span>
+            <h3>Streak Badges & Milestones</h3>
+            <p>Stay motivated and celebrate your continuous commitment to mindfulness with rewarding milestone badges.</p>
+        </div>
+        <div class="feature-card">
+            <span class="feature-icon">✨</span>
+            <h3>Daily Wisdom</h3>
+            <p>Start your journaling sessions with curated perspectives designed to inspire meaningful gratitude.</p>
+        </div>
+        <div class="feature-card">
+            <span class="feature-icon">🔒</span>
+            <h3>Private & Local</h3>
+            <p>Your reflections remain strictly yours in a calm, focused environment designed for peaceful self-discovery.</p>
         </div>
     </div>
 
-    <h2 class="section-title">Support & Inquiries</h2>
     <div class="support-card">
-        <p>Need help, want to report a bug, or share feedback?</p>
-        <p style="margin-top: 10px;">Contact us at: <a href="mailto:themomomethod24@gmail.com">themomomethod24@gmail.com</a></p>
+        <h3>Need Support or Have Feedback?</h3>
+        <p style="margin-top: 6px;">We’d love to hear from you. Get in touch at <a href="mailto:themomomethod24@gmail.com">themomomethod24@gmail.com</a></p>
     </div>
 </div>
 
 <footer>
-    <p>&copy; 2026 Gratitude App. Built with care.</p>
-    <p style="margin-top: 12px;">
+    <p>&copy; 2026 Gratitude. All rights reserved.</p>
+    <p>
         <a href="https://sites.google.com/view/gratitude-privacy-policy/home" target="_blank">Privacy Policy</a>
         <span>•</span>
         <a href="/app-ads.txt">app-ads.txt</a>
